@@ -50,7 +50,7 @@ public class InventoryController {
         return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Stock deleted successfully");
     }
 
-    @RequestMapping("/test")
+    @GetMapping("/test")
     public String test() {
         return "test";
     }

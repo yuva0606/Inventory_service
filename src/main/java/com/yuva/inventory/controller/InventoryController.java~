@@ -25,9 +25,6 @@ public class InventoryController {
 
     @GetMapping("/{productId}")
     public ResponseEntity<?> getStock(@PathVariable String productId, HttpServletRequest request) {
-        if (!"ADMIN".equals(request.getHeader("Authenticated-Role"))) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("It seems like you are not authorized to perform this action");
-        }
         return ResponseEntity.ok(inventoryService.getQuantity(productId));
     }
 
