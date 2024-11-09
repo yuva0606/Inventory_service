@@ -16,10 +16,7 @@ public class InventoryController {
     private final InventoryService inventoryService;
 
     @PostMapping("/addStock")
-    public Integer addStock(@RequestBody StockRequest stockRequest, HttpServletRequest request) {
-        if (!"ADMIN".equals(request.getHeader("Authenticated-Role"))) {
-            throw new RuntimeException("It seems like you are not authorized to perform this action");
-        }
+    public Integer addStock(@RequestBody StockRequest stockRequest) {
         return inventoryService.addQuantity(stockRequest.productId(), stockRequest.quantity());
     }
 
