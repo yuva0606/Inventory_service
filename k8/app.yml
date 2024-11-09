@@ -17,6 +17,7 @@ spec:
       containers:
         - name: inventory-service
           image: docker.io/yuva0606/inventory-service
+          imagePullPolicy: Always
           ports:
             - containerPort: 8084
 ---

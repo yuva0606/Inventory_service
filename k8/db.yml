@@ -16,12 +16,13 @@ spec:
     spec:
       containers:
         - name: mysql
-          image: mysql:5.7  # You can use any other MySQL version as needed
+          image: mysql:5.7
+
           env:
             - name: MYSQL_ROOT_PASSWORD
-              value: root  # Directly set the root password (or any other password)
+              value: root
             - name: MYSQL_DATABASE
-              value: inventorydb  # Name of the database to be created
+              value: inventorydb
           ports:
             - containerPort: 3306
 ---
