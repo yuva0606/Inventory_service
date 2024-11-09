@@ -16,9 +16,9 @@ spec:
     spec:
       containers:
         - name: inventory-service
-          image: docker.io/yuva0606/inventory-service  # Replace with your actual Inventory Service image
+          image: docker.io/yuva0606/inventory-service
           ports:
-            - containerPort: 8080  # Adjust based on your Inventory Service port
+            - containerPort: 8084
 ---
 apiVersion: v1
 kind: Service
@@ -28,7 +28,7 @@ metadata:
     app: inventory-service
 spec:
   ports:
-    - port: 8080  # Adjust based on your Inventory Service port
-      targetPort: 8080
+    - port: 8084
+      targetPort: 8084
   selector:
     app: inventory-service
